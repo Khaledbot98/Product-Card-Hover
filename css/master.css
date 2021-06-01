@@ -1,0 +1,107 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-block-size: 100%;
+    min-inline-size: 100%;
+  }
+
+
+  .product {
+    width: 400px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    margin: 30px auto;
+    text-align: center;
+    box-shadow: 0 0 10px #ddd;
+  }
+
+  .product h2 {
+    background-color: #009688;
+    color: #fff;
+    padding: 15px;
+    margin: 0 0 30px;
+    width: calc(100% + 80px);
+    position: relative;
+    left: -40px;
+  }
+
+  .product h2::before {
+    content: "";
+    width: 0;
+    position: absolute;
+    bottom: -24px;
+    left: 0;
+    border-width: 12px;
+    border-style: solid;
+    border-color: #0e8278 #0e8278 transparent transparent;
+  }
+
+  .product h2::after {
+    content: "";
+    width: 0;
+    position: absolute;
+    bottom: -24px;
+    right: 0;
+    border-width: 12px;
+    border-style: solid;
+    border-color: #0e8278 transparent transparent #0e8278;
+  }
+
+  .product p {
+    color: #333;
+    line-height: 1.8;
+  }
+
+
+  /* h1 */
+
+  html {
+    block-size: 100%;
+    inline-size: 100%;
+  }
+
+  
+  h1::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  
+  h1:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    width: 100%;
+  }
+  
+  h1::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: hsl(200 100% 80%);
+    z-index: -1;
+    transition: transform .3s ease;
+    width: 100%;
+  }
+  
+  h1 {
+    position: relative;
+    font-size: 5rem;
+    /* text-align: center; */
+    /* to start the hover in h1 only */
+    width: fit-content;
+    margin: auto;
+  }
+  
+ 
+  
+  @media (orientation: landscape) {
+    body {
+      grid-auto-flow: column;
+    }
+  }
